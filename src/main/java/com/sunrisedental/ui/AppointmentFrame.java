@@ -48,6 +48,8 @@ public class AppointmentFrame extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
+        lblAddress = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,7 +93,10 @@ public class AppointmentFrame extends javax.swing.JFrame {
         btnBack.setText("BACK");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
+        lblMessage.setForeground(new java.awt.Color(255, 0, 51));
         lblMessage.setText("lblMessage");
+
+        lblAddress.setText("Address");
 
         javax.swing.GroupLayout pn1AppointmentLayout = new javax.swing.GroupLayout(pn1Appointment);
         pn1Appointment.setLayout(pn1AppointmentLayout);
@@ -107,7 +112,8 @@ public class AppointmentFrame extends javax.swing.JFrame {
                             .addComponent(lblDentist, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(66, 66, 66)
                         .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtPatientName)
@@ -115,10 +121,8 @@ public class AppointmentFrame extends javax.swing.JFrame {
                             .addComponent(cmbDentist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtDate)
                             .addComponent(txtTime)
-                            .addComponent(cmbTreatment, 0, 156, Short.MAX_VALUE)))
-                    .addGroup(pn1AppointmentLayout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(btnBack))
+                            .addComponent(cmbTreatment, 0, 156, Short.MAX_VALUE)
+                            .addComponent(txtAddress)))
                     .addGroup(pn1AppointmentLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -133,7 +137,11 @@ public class AppointmentFrame extends javax.swing.JFrame {
                         .addComponent(btnSave)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnClear)
-                        .addGap(85, 85, 85))))
+                        .addGap(89, 89, 89))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1AppointmentLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnBack)
+                .addGap(211, 211, 211))
         );
         pn1AppointmentLayout.setVerticalGroup(
             pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,33 +152,40 @@ public class AppointmentFrame extends javax.swing.JFrame {
                 .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPatientName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn1AppointmentLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(lblAddress)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblContact, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblDentist, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE))
+                    .addGroup(pn1AppointmentLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmbDentist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblContact, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbDentist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDentist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTime))
-                .addGap(47, 47, 47)
+                    .addComponent(lblTime)
+                    .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
                 .addGroup(pn1AppointmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
                     .addComponent(btnClear))
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addComponent(btnBack)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(lblMessage)
                 .addGap(33, 33, 33))
         );
@@ -202,114 +217,90 @@ public class AppointmentFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTimeActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-           String patientName = txtPatientName.getText().trim();
-    String contact = txtContact.getText().trim();
+          String patientName = txtPatientName.getText().trim();
+String address = txtAddress.getText().trim();
+String contact = txtContact.getText().trim();
 
-    String dentist = cmbDentist.getSelectedItem().toString();
-    String treatment = cmbTreatment.getSelectedItem().toString();
+String dentist = cmbDentist.getSelectedItem().toString();
+String treatment = cmbTreatment.getSelectedItem().toString();
 
-    String date = txtDate.getText().trim();
-    String time = txtTime.getText().trim();
+String date = txtDate.getText().trim();
+String time = txtTime.getText().trim();
 
-    // Basic validation
-    if (patientName.isEmpty()) {
-        lblMessage.setText("Please enter patient name.");
-        return;
-    }
+if (patientName.isEmpty()) {
+    lblMessage.setText("Please enter patient name.");
+    return;
+}
 
-    if (contact.isEmpty()) {
-        lblMessage.setText("Please enter contact number.");
-        return;
-    }
+if (address.isEmpty()) {
+    lblMessage.setText("Please enter your address.");
+    return;
+}
 
-    if (dentist.equals("Select Dentist")) {
-        lblMessage.setText("Please select a dentist.");
-        return;
-    }
+if (contact.isEmpty()) {
+    lblMessage.setText("Please enter contact number.");
+    return;
+}
 
-    if (treatment.equals("Select Treatment")) {
-        lblMessage.setText("Please select a treatment.");
-        return;
-    }
+try {
 
-    if (date.isEmpty()) {
-        lblMessage.setText("Please enter appointment date.");
-        return;
-    }
+    AppointmentPort appointmentService =
+            ServiceClient.appointments();
 
-    if (time.isEmpty()) {
-        lblMessage.setText("Please enter appointment time.");
-        return;
-    }
-
-    try {
-
-        // Your current form does not have an address field.
-        String address = "N/A";
-
-        // Get SOAP appointment service
-        AppointmentPort appointmentService =
-                ServiceClient.appointments();
-
-        // Send appointment to web service
-        ServiceResponse response =
-                appointmentService.registerAppointment(
-                        patientName,
-                        address,
-                        contact,
-                        dentist,
-                        treatment,
-                        date,
-                        time
-                );
-
-        // Check response
-        if (response.success) {
-
-            lblMessage.setText(
-                    "Appointment saved! ID: " + response.id
+    ServiceResponse response =
+            appointmentService.registerAppointment(
+                    patientName,
+                    address,
+                    contact,
+                    dentist,
+                    treatment,
+                    date,
+                    time
             );
 
-            javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    "Appointment registered successfully!\n\n"
-                    + "Appointment ID: " + response.id,
-                    "Success",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE
-            );
-
-        } else {
-
-            lblMessage.setText(response.message);
-
-            javax.swing.JOptionPane.showMessageDialog(
-                    this,
-                    response.message,
-                    "Appointment Error",
-                    javax.swing.JOptionPane.ERROR_MESSAGE
-            );
-        }
-
-    } catch (Exception e) {
-
-        e.printStackTrace();
+    if (response.success) {
 
         lblMessage.setText(
-                "Could not connect to appointment service."
+                "Appointment saved! ID: " + response.id
         );
 
         javax.swing.JOptionPane.showMessageDialog(
                 this,
-                "Could not save appointment.\n\n"
-                + e.getMessage(),
-                "Connection Error",
+                "Appointment registered successfully!\n\n"
+                + "Appointment ID: " + response.id,
+                "Success",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+
+    } else {
+
+        lblMessage.setText(response.message);
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                response.message,
+                "Appointment Error",
                 javax.swing.JOptionPane.ERROR_MESSAGE
         );
+    }
+
+} catch (Exception e) {
+
+    e.printStackTrace();
+
+    javax.swing.JOptionPane.showMessageDialog(
+            this,
+            "Could not save appointment.\n\n"
+            + e.getMessage(),
+            "Connection Error",
+            javax.swing.JOptionPane.ERROR_MESSAGE
+    );
       }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         txtPatientName.setText("");
+        txtAddress.setText("");
     txtContact.setText("");
     cmbDentist.setSelectedIndex(0);
     cmbTreatment.setSelectedIndex(0);
@@ -359,6 +350,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbDentist;
     private javax.swing.JComboBox<String> cmbTreatment;
+    private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblContact;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblDentist;
@@ -368,6 +360,7 @@ public class AppointmentFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblTreatment;
     private javax.swing.JPanel pn1Appointment;
+    private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtContact;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtPatientName;
