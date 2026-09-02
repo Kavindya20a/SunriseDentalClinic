@@ -36,6 +36,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         btnBilling = new javax.swing.JButton();
         btnReports = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        btnHelp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +63,9 @@ public class DashboardFrame extends javax.swing.JFrame {
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(this::btnLogoutActionPerformed);
 
+        btnHelp.setText("HELP");
+        btnHelp.addActionListener(this::btnHelpActionPerformed);
+
         javax.swing.GroupLayout pn1DashboardLayout = new javax.swing.GroupLayout(pn1Dashboard);
         pn1Dashboard.setLayout(pn1DashboardLayout);
         pn1DashboardLayout.setHorizontalGroup(
@@ -74,23 +78,22 @@ public class DashboardFrame extends javax.swing.JFrame {
                         .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(pn1DashboardLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(btnAppointments)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSearch)
-                .addGap(69, 69, 69))
-            .addGroup(pn1DashboardLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1DashboardLayout.createSequentialGroup()
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn1DashboardLayout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(btnBilling)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAppointments)
+                            .addComponent(btnBilling)))
                     .addGroup(pn1DashboardLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(btnLogout)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(52, 52, 52)
+                        .addComponent(btnHelp)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnLogout)
+                    .addComponent(btnSearch)
+                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41))
         );
         pn1DashboardLayout.setVerticalGroup(
             pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,13 +106,15 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAppointments)
                     .addComponent(btnSearch))
-                .addGap(35, 35, 35)
+                .addGap(42, 42, 42)
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBilling)
-                    .addComponent(btnReports))
-                .addGap(32, 32, 32)
-                .addComponent(btnLogout)
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addComponent(btnReports)
+                    .addComponent(btnBilling))
+                .addGap(47, 47, 47)
+                .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogout)
+                    .addComponent(btnHelp))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -155,6 +160,12 @@ public class DashboardFrame extends javax.swing.JFrame {
             loginframe.setVisible(true);
               this.dispose();    }//GEN-LAST:event_btnLogoutActionPerformed
 
+    private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed
+        HelpFrame HelpFrame = new HelpFrame();
+            HelpFrame.setVisible(true);
+              this.dispose();
+    }//GEN-LAST:event_btnHelpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -183,6 +194,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAppointments;
     private javax.swing.JButton btnBilling;
+    private javax.swing.JButton btnHelp;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnReports;
     private javax.swing.JButton btnSearch;

@@ -4,6 +4,10 @@
  */
 package com.sunrisedental.ui;
 
+import com.sunrisedental.dao.UserDAO;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author my pc
@@ -38,10 +42,12 @@ public class Loginframe extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        btnRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnlLogin.setBackground(new java.awt.Color(153, 255, 204));
+        pnlLogin.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setText("SUNRISE DENTAL CLINIC");
@@ -62,7 +68,13 @@ public class Loginframe extends javax.swing.JFrame {
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(this::btnLoginActionPerformed);
 
-        lblMessage.setText("lblMessage");
+        lblMessage.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+
+        jLabel1.setText("Don't have an account?");
+
+        btnRegister.setBackground(new java.awt.Color(255, 255, 204));
+        btnRegister.setText("REGISTER");
+        btnRegister.addActionListener(this::btnRegisterActionPerformed);
 
         javax.swing.GroupLayout pnlLoginLayout = new javax.swing.GroupLayout(pnlLogin);
         pnlLogin.setLayout(pnlLoginLayout);
@@ -70,6 +82,19 @@ public class Loginframe extends javax.swing.JFrame {
             pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlLoginLayout.createSequentialGroup()
                 .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlLoginLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlLoginLayout.createSequentialGroup()
+                                .addComponent(btnClear)
+                                .addGap(66, 66, 66)
+                                .addComponent(btnLogin))
+                            .addGroup(pnlLoginLayout.createSequentialGroup()
+                                .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblMessage)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRegister))))
                     .addGroup(pnlLoginLayout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,55 +105,46 @@ public class Loginframe extends javax.swing.JFrame {
                             .addComponent(txtUsername)
                             .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)))
                     .addGroup(pnlLoginLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(lblSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnlLoginLayout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(btnClear)
-                .addGap(56, 56, 56)
-                .addComponent(btnLogin)
-                .addContainerGap(156, Short.MAX_VALUE))
-            .addGroup(pnlLoginLayout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(lblMessage)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(108, 108, 108)
+                        .addComponent(lblSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlLoginLayout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         pnlLoginLayout.setVerticalGroup(
             pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlLoginLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(36, 36, 36)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                .addGap(30, 30, 30)
                 .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClear)
                     .addComponent(btnLogin))
-                .addGap(32, 32, 32)
+                .addGap(25, 25, 25)
+                .addGroup(pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(lblMessage)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pnlLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,34 +169,84 @@ public class Loginframe extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        try {
         String username = txtUsername.getText().trim();
-        String password = new String(txtPassword.getPassword());
+    String password = new String(txtPassword.getPassword());
 
-        if (username.isEmpty() || password.isEmpty()) {
-            lblMessage.setText("Please enter username and password.");
-            return;
-        }
+    // Check empty fields
+    if (username.isEmpty() || password.isEmpty()) {
 
-        // TEMPORARY TEST LOGIN
-        // Later we connect this to AuthWebService
-        if (username.equals("admin") && password.equals("admin123")) {
+        lblMessage.setText("⚠ PLEASE ENTER USERNAME AND PASSWORD");
+        lblMessage.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 16));
+        lblMessage.setForeground(java.awt.Color.RED);
 
-            lblMessage.setText("Login successful!");
+        return;
+    }
 
-            DashboardFrame dashboard = new DashboardFrame();
-            dashboard.setVisible(true);
+    try {
 
-            this.dispose();
+        UserDAO userDAO = new UserDAO();
+
+        boolean valid = userDAO.authenticate(username, password);
+
+        if (valid) {
+
+           
+            lblMessage.setText("✓ LOGIN SUCCESSFUL!");
+            lblMessage.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 22));
+            lblMessage.setForeground(new java.awt.Color(0, 150, 0));
+
+         
+            javax.swing.Timer timer = new javax.swing.Timer(1000, e -> {
+
+                DashboardFrame dashboard = new DashboardFrame();
+                dashboard.setLocationRelativeTo(null);
+                dashboard.setVisible(true);
+
+                this.dispose();
+
+            });
+
+            timer.setRepeats(false);
+            timer.start();
 
         } else {
-            lblMessage.setText("Invalid username or password.");
+
+           
+            lblMessage.setText("✗ INVALID USERNAME OR PASSWORD!");
+            lblMessage.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+            lblMessage.setForeground(java.awt.Color.RED);
+
+            txtPassword.setText("");
+            txtPassword.requestFocus();
         }
 
-    } catch (Exception e) {
-        lblMessage.setText("Error: " + e.getMessage());
+    } catch (SQLException e) {
+
+        lblMessage.setText("✗ DATABASE CONNECTION ERROR!");
+        lblMessage.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+        lblMessage.setForeground(java.awt.Color.RED);
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Could not connect to the database.\n\n" + e.getMessage(),
+                "Database Error",
+                JOptionPane.ERROR_MESSAGE
+        );
+
+        e.printStackTrace();
     }
+
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+       
+    RegisterFrame register = new RegisterFrame();
+
+    register.setLocationRelativeTo(null);
+    register.setVisible(true);
+
+    this.dispose();
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +276,8 @@ public class Loginframe extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegister;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblMessage;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblSubtitle;

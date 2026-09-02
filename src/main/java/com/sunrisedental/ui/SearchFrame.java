@@ -4,6 +4,8 @@
  */
 package com.sunrisedental.ui;
 
+import com.sunrisedental.client.ServiceClient;
+
 /**
  *
  * @author my pc
@@ -68,27 +70,27 @@ public class SearchFrame extends javax.swing.JFrame {
         pn1SearchLayout.setHorizontalGroup(
             pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn1SearchLayout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(btnClear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBack)
+                .addGap(121, 121, 121))
+            .addGroup(pn1SearchLayout.createSequentialGroup()
                 .addGroup(pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn1SearchLayout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pn1SearchLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pn1SearchLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(lblAppointmentId, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAppointmentId, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch)))
-                .addContainerGap(85, Short.MAX_VALUE))
-            .addGroup(pn1SearchLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
-                .addComponent(btnClear)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(87, 87, 87))
+                        .addComponent(btnSearch))
+                    .addGroup(pn1SearchLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         pn1SearchLayout.setVerticalGroup(
             pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,12 +103,12 @@ public class SearchFrame extends javax.swing.JFrame {
                     .addComponent(txtAppointmentId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClear)
-                    .addComponent(btnBack))
-                .addContainerGap(82, Short.MAX_VALUE))
+                    .addComponent(btnBack)
+                    .addComponent(btnClear))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,25 +126,50 @@ public class SearchFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        String appointmentId = txtAppointmentId.getText().trim();
+       String appointmentIdText = txtAppointmentId.getText().trim();
 
-    if (appointmentId.isEmpty()) {
-        txtSearchResult.setText("Please enter an Appointment ID.");
+    // Check empty
+    if (appointmentIdText.isEmpty()) {
+
+        txtSearchResult.setText(
+                "Please enter an Appointment ID."
+        );
+
         return;
     }
 
-    /*
-     * NEXT:
-     * Call SearchWebService here.
-     */
+    // Check number
+    int appointmentId;
 
-    txtSearchResult.setText(
-            "Appointment ID: " + appointmentId
-            + "\nPatient: Test Patient"
-            + "\nContact: 0771234567"
-            + "\nDentist: Dr. Silva"
-            + "\nTreatment: Cleaning"
-    );
+    try {
+
+        appointmentId = Integer.parseInt(appointmentIdText);
+
+    } catch (NumberFormatException e) {
+
+        txtSearchResult.setText(
+                "Please enter a valid Appointment ID."
+        );
+
+        return;
+    }
+
+    try {
+
+        String result = ServiceClient.appointments()
+                .searchAppointment(appointmentId);
+
+        txtSearchResult.setText(result);
+
+    } catch (Exception e) {
+
+        txtSearchResult.setText(
+                "Unable to search appointment.\n"
+                + e.getMessage()
+        );
+
+        e.printStackTrace();
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
