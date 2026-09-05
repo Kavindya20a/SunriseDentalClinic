@@ -42,14 +42,15 @@ public class SearchFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pn1Search.setBackground(new java.awt.Color(153, 255, 204));
+        pn1Search.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setText("SEARCH APPOINTMENT");
 
         lblAppointmentId.setText("Appointment ID");
 
-        btnSearch.setBackground(new java.awt.Color(204, 255, 204));
+        btnSearch.setBackground(new java.awt.Color(0, 153, 255));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("Search");
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
@@ -57,11 +58,13 @@ public class SearchFrame extends javax.swing.JFrame {
         txtSearchResult.setRows(5);
         jScrollPane1.setViewportView(txtSearchResult);
 
-        btnClear.setBackground(new java.awt.Color(204, 255, 204));
+        btnClear.setBackground(new java.awt.Color(0, 153, 255));
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("CLEAR");
         btnClear.addActionListener(this::btnClearActionPerformed);
 
-        btnBack.setBackground(new java.awt.Color(204, 255, 204));
+        btnBack.setBackground(new java.awt.Color(0, 153, 255));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
@@ -71,7 +74,7 @@ public class SearchFrame extends javax.swing.JFrame {
             pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn1SearchLayout.createSequentialGroup()
                 .addGap(111, 111, 111)
-                .addComponent(btnClear)
+                .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBack)
                 .addGap(121, 121, 121))
@@ -106,9 +109,9 @@ public class SearchFrame extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(pn1SearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBack)
-                    .addComponent(btnClear))
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

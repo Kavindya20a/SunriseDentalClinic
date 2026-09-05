@@ -40,7 +40,7 @@ public class ReportFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pn1Report.setBackground(new java.awt.Color(153, 255, 204));
+        pn1Report.setBackground(new java.awt.Color(255, 255, 255));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setText("APPOINTMENT REPORT");
@@ -49,15 +49,21 @@ public class ReportFrame extends javax.swing.JFrame {
         txtReport.setRows(5);
         jScrollPane1.setViewportView(txtReport);
 
+        btnSearch.setBackground(new java.awt.Color(0, 153, 255));
+        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
         btnSearch.setText("SEARCH");
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
+        btnBack.setBackground(new java.awt.Color(0, 153, 255));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("BACK");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
         lblAppointmentId.setBackground(new java.awt.Color(255, 255, 255));
         lblAppointmentId.setText("Appointment ID:");
 
+        btnClear.setBackground(new java.awt.Color(0, 153, 255));
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setText("CLEAR");
         btnClear.addActionListener(this::btnClearActionPerformed);
 

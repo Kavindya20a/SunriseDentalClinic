@@ -17,6 +17,23 @@ public class HelpFrame extends javax.swing.JFrame {
      */
     public HelpFrame() {
         initComponents();
+          
+        pn1Help.setBackground(new java.awt.Color(240, 248, 249));
+
+    
+    lblTitle.setForeground(new java.awt.Color(20, 76, 84));
+    lblTitle.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 22));
+
+   
+    lblSubtitle.setForeground(new java.awt.Color(82, 110, 116));
+    lblSubtitle.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
+    
+    btnBack.setBackground(new java.awt.Color(20, 126, 137));
+    btnBack.setForeground(java.awt.Color.WHITE);
+    btnBack.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+    btnBack.setFocusPainted(false);
+    btnBack.setBorderPainted(false);
+    btnBack.setOpaque(true);
     }
 
     /**
@@ -40,8 +57,10 @@ public class HelpFrame extends javax.swing.JFrame {
 
         pn1Help.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTitle.setText("SUNRISE DENTAL CLINIC");
 
+        lblSubtitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSubtitle.setText("STAFF HELP");
 
         btnBack.setText("BACK");
@@ -64,29 +83,29 @@ public class HelpFrame extends javax.swing.JFrame {
             .addGroup(pn1HelpLayout.createSequentialGroup()
                 .addGroup(pn1HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn1HelpLayout.createSequentialGroup()
-                        .addGap(203, 203, 203)
-                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(255, 255, 255)
+                        .addComponent(btnBack))
                     .addGroup(pn1HelpLayout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(lblSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pn1HelpLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
+                        .addGap(63, 63, 63)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pn1HelpLayout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(btnBack)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                        .addGap(180, 180, 180)
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pn1HelpLayout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(lblSubtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         pn1HelpLayout.setVerticalGroup(
             pn1HelpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn1HelpLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblSubtitle)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(btnBack)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
@@ -95,9 +114,7 @@ public class HelpFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pn1Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1885, Short.MAX_VALUE))
+            .addComponent(pn1Help, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

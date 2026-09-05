@@ -17,6 +17,67 @@ public class DashboardFrame extends javax.swing.JFrame {
      */
     public DashboardFrame() {
         initComponents();
+        
+        pn1Dashboard.setBackground(new java.awt.Color(240, 248, 249));
+
+    
+    lblTitle.setForeground(new java.awt.Color(20, 76, 84));
+    lblTitle.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 22));
+
+   
+    lblWelcome.setForeground(new java.awt.Color(82, 110, 116));
+    lblWelcome.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
+
+  
+    btnAppointments.setBackground(new java.awt.Color(20, 126, 137));
+    btnAppointments.setForeground(java.awt.Color.WHITE);
+    btnAppointments.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+    btnAppointments.setFocusPainted(false);
+    btnAppointments.setBorderPainted(false);
+    btnAppointments.setOpaque(true);
+
+    
+    btnSearch.setBackground(new java.awt.Color(214, 239, 241));
+    btnSearch.setForeground(new java.awt.Color(20, 100, 110));
+    btnSearch.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 13));
+    btnSearch.setFocusPainted(false);
+    btnSearch.setBorderPainted(false);
+    btnSearch.setOpaque(true);
+    
+     btnBilling.setBackground(new java.awt.Color(214, 239, 241));
+    btnBilling.setForeground(new java.awt.Color(20, 100, 110));
+    btnBilling.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 13));
+    btnBilling.setFocusPainted(false);
+    btnBilling.setBorderPainted(false);
+    btnBilling.setOpaque(true);
+    
+    
+    btnReports.setBackground(new java.awt.Color(20, 126, 137));
+    btnReports.setForeground(java.awt.Color.WHITE);
+    btnReports.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+    btnReports.setFocusPainted(false);
+    btnReports.setBorderPainted(false);
+    btnReports.setOpaque(true);
+
+    
+    btnHelp.setBackground(new java.awt.Color(214, 239, 241));
+    btnHelp.setForeground(new java.awt.Color(20, 100, 110));
+    btnHelp.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 13));
+    btnHelp.setFocusPainted(false);
+    btnHelp.setBorderPainted(false);
+    btnHelp.setOpaque(true);
+    
+     btnLogout.setBackground(new java.awt.Color(214, 239, 241));
+    btnLogout.setForeground(new java.awt.Color(20, 100, 110));
+    btnLogout.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 13));
+    btnLogout.setFocusPainted(false);
+    btnLogout.setBorderPainted(false);
+    btnLogout.setOpaque(true);
+
+
+    setTitle("Sunrise Dental Clinic");
+    setResizable(false);
+    setLocationRelativeTo(null);
     }
 
     /**
@@ -40,29 +101,35 @@ public class DashboardFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pn1Dashboard.setBackground(new java.awt.Color(102, 255, 255));
+        pn1Dashboard.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTitle.setText("SUNRISE DENTAL CLINIC");
 
         lblWelcome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblWelcome.setText("Welcome to Clinic Management System");
 
+        btnAppointments.setBackground(new java.awt.Color(0, 153, 255));
         btnAppointments.setText("APPOINTMENTS");
         btnAppointments.addActionListener(this::btnAppointmentsActionPerformed);
 
+        btnSearch.setBackground(new java.awt.Color(51, 153, 255));
         btnSearch.setText("SEARCH");
         btnSearch.addActionListener(this::btnSearchActionPerformed);
 
+        btnBilling.setBackground(new java.awt.Color(0, 102, 204));
         btnBilling.setText("BILLING");
         btnBilling.addActionListener(this::btnBillingActionPerformed);
 
+        btnReports.setBackground(new java.awt.Color(0, 102, 255));
         btnReports.setText("REPORTS");
         btnReports.addActionListener(this::btnReportsActionPerformed);
 
+        btnLogout.setBackground(new java.awt.Color(0, 102, 255));
         btnLogout.setText("LOGOUT");
         btnLogout.addActionListener(this::btnLogoutActionPerformed);
 
+        btnHelp.setBackground(new java.awt.Color(0, 102, 255));
         btnHelp.setText("HELP");
         btnHelp.addActionListener(this::btnHelpActionPerformed);
 
@@ -70,62 +137,68 @@ public class DashboardFrame extends javax.swing.JFrame {
         pn1Dashboard.setLayout(pn1DashboardLayout);
         pn1DashboardLayout.setHorizontalGroup(
             pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn1DashboardLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pn1DashboardLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1DashboardLayout.createSequentialGroup()
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pn1DashboardLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAppointments)
-                            .addComponent(btnBilling)))
+                        .addGap(30, 30, 30)
+                        .addComponent(btnAppointments, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pn1DashboardLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(btnHelp)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(57, 57, 57)
+                        .addComponent(btnBilling, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(83, 83, 83))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1DashboardLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogout)
-                    .addComponent(btnSearch)
-                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1DashboardLayout.createSequentialGroup()
+                        .addComponent(btnHelp)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnLogout)
+                        .addGap(164, 164, 164))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1DashboardLayout.createSequentialGroup()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
+            .addGroup(pn1DashboardLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pn1DashboardLayout.setVerticalGroup(
             pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pn1DashboardLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(lblTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblWelcome)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAppointments)
-                    .addComponent(btnSearch))
-                .addGap(42, 42, 42)
+                    .addComponent(btnAppointments, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReports)
-                    .addComponent(btnBilling))
-                .addGap(47, 47, 47)
+                    .addComponent(btnReports, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBilling, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(pn1DashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogout)
-                    .addComponent(btnHelp))
-                .addContainerGap(122, Short.MAX_VALUE))
+                    .addComponent(btnHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pn1Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pn1Dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pn1Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pn1Dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,7 +217,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillingActionPerformed
-          BillFrame billFrame = new BillFrame();
+          BillingFrame billFrame = new BillingFrame();
     billFrame.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_btnBillingActionPerformed
@@ -156,8 +229,28 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportsActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-       Loginframe loginframe = new Loginframe();
-            loginframe.setVisible(true);
+          int choice = javax.swing.JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to logout?",
+            "Logout Confirmation",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.QUESTION_MESSAGE
+    );
+
+    if (choice == javax.swing.JOptionPane.YES_OPTION) {
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                "You have been logged out successfully.",
+                "Logout Successful",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+
+        new Loginframe().setVisible(true);
+
+    }
+
+             
               this.dispose();    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHelpActionPerformed

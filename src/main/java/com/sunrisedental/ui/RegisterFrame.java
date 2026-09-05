@@ -58,12 +58,15 @@ public class RegisterFrame extends javax.swing.JFrame {
 
         lblPassword.setText("Password");
 
+        btnClear.setBackground(new java.awt.Color(0, 102, 204));
         btnClear.setText("CLEAR");
         btnClear.addActionListener(this::btnClearActionPerformed);
 
+        btnRegister.setBackground(new java.awt.Color(0, 102, 204));
         btnRegister.setText("REGISTER");
         btnRegister.addActionListener(this::btnRegisterActionPerformed);
 
+        btnBack.setBackground(new java.awt.Color(0, 102, 204));
         btnBack.setText("BACK");
         btnBack.addActionListener(this::btnBackActionPerformed);
 
