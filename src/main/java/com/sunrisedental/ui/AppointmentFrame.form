@@ -64,12 +64,12 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblTreatment" min="-2" pref="70" max="-2" attributes="0"/>
                                           <Component id="lblContact" min="-2" pref="151" max="-2" attributes="0"/>
                                           <Component id="lblDate" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                           <Component id="lblTime" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                                           <Component id="lblDentist" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
                                           <Component id="btnSave" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblTreatment" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
